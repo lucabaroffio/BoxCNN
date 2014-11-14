@@ -30,7 +30,7 @@ BoxFilterBank::BoxFilterBank(int nFilt, std::vector<int> filtsize, cv::Range box
             int end_d = std::min(nDim, centerDim + size_d/2);
 
             double v = rng.uniform(-1.0, 1.0);
-            sum_v += v*size_r*size_c*(end_d - start_d);
+            sum_v += v*(size_r + 1)*(size_c + 1)*(end_d - start_d + 1);
 
             boxes.push_back(Box(cv::Point3f(start_c, start_r, start_d), cv::Point3f(end_c, end_r, end_d), v));
         }

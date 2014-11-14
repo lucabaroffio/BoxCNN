@@ -137,7 +137,7 @@ cv::Mat BoxFilter::perform(std::vector<cv::Mat> in_d){
 //    cv::Range ran[2];
 //    ran[0] = cv::Range(_shape[0], out.rows - shape[0]);
 //    ran[1] = cv::Range(_shape[1], out.cols - shape[1]);
-    return out(cv::Range(_shape[0], out.rows - _shape[0]), cv::Range(_shape[1], out.cols - _shape[1]));
+    return out(cv::Range(_shape[0]/2 + 1, out.rows - _shape[0]/2 - 1), cv::Range(_shape[1]/2 + 1, out.cols - _shape[1]/2 - 1));
 }
 std::vector<int> BoxFilter::shape() const
 {
